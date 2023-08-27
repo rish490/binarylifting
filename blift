@@ -1,0 +1,36 @@
+vector<int>adj[50005];
+    int up[50005][21];
+    void blift(int node,int papa){
+        up[node][0]=papa;
+        for(int i=1;i<=20;i++){
+            if(up[node][i-1]!=-1){
+                up[node][i]=up[up[node][i-1]][i-1];
+            }
+            else{
+                up[node][i]=-1;
+            }
+        }
+        for(int i:adj[node]){
+            if(i==papa){
+                continue;
+            }
+            blift(i,node);
+        }
+        return;
+    }
+int getKthAncestor(int node, int k) {
+        int curr=node;
+        for(int i=20;i>=0;i--){
+            int idhar=1<<i;
+            if(idhar&k){
+                if(curr==-1){
+                    
+                }
+                else{
+                    curr=up[curr][i];
+                }
+            }
+        }
+        return curr;
+    }
+//call blift(0,-1) if 0 is node in main function and adjust bits accordingly if 30 
