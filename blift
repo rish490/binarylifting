@@ -33,4 +33,4 @@ int getKthAncestor(int node, int k) {
         }
         return curr;
     }
-//call blift(0,-1) if 0 is node in main function and adjust bits accordingly if 30 
+//call blift(0,-1) if 0 is root in main function and adjust bits accordingly if 30 
