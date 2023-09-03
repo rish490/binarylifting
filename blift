@@ -42,8 +42,8 @@ ll lca(ll node1,ll node2){
             }
         for(ll i=20;i>=0;i--){
             if(up[node1][i]!=up[node2][i]){
-                curr1=up[node1][i];
-                curr2=up[node2][i];
+                node1=up[node1][i];
+                node2=up[node2][i];
             }
         }
         return up[node1][0];
